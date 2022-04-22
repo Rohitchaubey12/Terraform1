@@ -1,0 +1,9 @@
+pipeline {
+       agent any
+       enviroment {
+              credentials = credentials('rohit-aws-creds')
+          }
+          stage {
+                stage ("checkout scm"){
+                      steps { 
+                              checkout([$class: 'GitSCM', branches: [[name: '*/master]], extension: [], userRemoteConfigs: [[credentialsId: '951c8fc8-6977-4a05-acc3-240cd6f87fc4',url: '
